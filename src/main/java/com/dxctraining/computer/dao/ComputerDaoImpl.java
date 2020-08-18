@@ -21,17 +21,17 @@ public class ComputerDaoImpl implements IComputerDao {
 	}
 
 	@Override
-	public Computer findComputerBySerialnum(int serialnum) {
-		Computer computer = entityManager.find(Computer.class, serialnum);
+	public Computer findComputerById(int id) {
+		Computer computer = entityManager.find(Computer.class, id);
 		if (computer == null) {
-			throw new ComputerNotFoundException("computer not found for the given serialnumber" +serialnum);
+			throw new ComputerNotFoundException("computer not found for the given id" +id);
 		}
 		return computer;
 	}
 
 	@Override
-	public void remove(int serialnum) {
-		Computer computer = findComputerBySerialnum(serialnum);
+	public void remove(int id) {
+		Computer computer = findComputerById(id);
 		entityManager.remove(computer);
 	}
 

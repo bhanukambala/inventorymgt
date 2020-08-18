@@ -1,4 +1,4 @@
-package com.dxctraining.ui;
+package com.dxctraining.Ui;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,29 +21,35 @@ import javax.annotation.PostConstruct;
 public class InventoryUi {
 	@Autowired
 	private IItemService itemservice;
+	@Autowired
 	private ISupplierService supplierservice;
+	@Autowired
 	private IComputerService computerservice;
+	@Autowired
 	private IPhoneService phoneservice;
 	
 	@PostConstruct
 	public void runUi() {
 		try {
-			Supplier supplier1=new Supplier(1,"bhanu");
-			Supplier supplier2=new Supplier(2,"mallika");
+			Supplier supplier1=new Supplier("bhanu");
+			Supplier supplier2=new Supplier("mallika");
 			supplierservice.add(supplier1);
 			supplierservice.add(supplier2);
-			Computer computer1=new Computer(1,"hp",supplier1,364,101);
+			Computer computer1=new Computer("hp",supplier1,364);
 			computerservice.add(computer1);
-			Phone phone1=new Phone(2,"redmi",supplier2,64,73);
+			Phone phone1=new Phone("redmi",supplier2,64);
 			phoneservice.add(phone1);
+		
 			
-			int serialnum1=computer1.getSerialnum();
-			Computer fetched1=computerservice.findComputerBySerialnum(serialnum1);
-			System.out.println("item fetched "+fetched1.getId()+""+fetched1.getName()+""+fetched1.getSupplier()+""+fetched1.getDisksize()+""+fetched1.getSerialnum());
-			int serialnum2=phone1.getSerialnum();
-			Phone fetched2=phoneservice.findPhoneBySerialnum(serialnum2);
-			System.out.println("item fetched "+fetched2.getId()+""+fetched2.getName()+""+fetched2.getSupplier()+""+fetched2.getStoragesize()+""+fetched2.getSerialnum());
+			int id1=computer1.getId();
+			Computer fetched1=computerservice.findComputerById(id1);
+			System.out.println("item fetched "+fetched1.getId()+""+fetched1.getName()+""+fetched1.getSupplier()+""+fetched1.getDisksize());
+			int id2=phone1.getId();
+			Phone fetched2=phoneservice.findPhoneById(id2);
+			System.out.println("item fetched "+fetched2.getId()+""+fetched2.getName()+""+fetched2.getSupplier()+""+fetched2.getStoragesize());
+	
 		}
+		
 		 catch (ItemNotFoundException e) {
 	            e.printStackTrace();
 	        } catch (InvalidArgumentException e) {

@@ -4,6 +4,6 @@ import com.dxctraining.computer.entities.Computer;
 
 public interface IComputerDao {
 	Computer add(Computer  computer);
-	Computer findComputerBySerialnum(int serialnum);
-		 void remove(int serialnum);
+		 void remove(int id);
+		Computer findComputerById(int id);
 }

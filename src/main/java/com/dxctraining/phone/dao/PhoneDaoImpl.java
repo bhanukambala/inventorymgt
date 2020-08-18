@@ -21,17 +21,17 @@ public class PhoneDaoImpl implements IPhoneDao {
 	}
 
 	@Override
-	public Phone findPhoneBySerialnum(int serialnum) {
-		Phone phone= entityManager.find(Phone.class, serialnum);
+	public Phone findPhoneById(int id) {
+		Phone phone= entityManager.find(Phone.class, id);
 		if (phone == null) {
-			throw new PhoneNotFoundException("phone not found for the given serialnumber" +serialnum);
+			throw new PhoneNotFoundException("phone not found for the given id" +id);
 		}
 		return phone;
 	}
 
 	@Override
-	public void remove(int serialnum) {
-		Phone phone= findPhoneBySerialnum(serialnum);
+	public void remove(int id) {
+		Phone phone= findPhoneById(id);
 		entityManager.remove(phone);
 	}
 

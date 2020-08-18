@@ -5,7 +5,7 @@ import com.dxctraining.phone.entities.Phone;
 
 public interface IPhoneService {
 	Phone add(Phone phone);
-	Phone findPhoneBySerialnum(int serialnum);
-		 void remove(int serialnum);
+	Phone findPhoneById(int id);
+		 void remove(int id);
 
 }

@@ -30,14 +30,14 @@ public class ComputerServiceImpl implements IComputerService {
 	}
 
 	@Override
-	public Computer findComputerBySerialnum(int serialnum) {
-		Computer computer = dao.findComputerBySerialnum(serialnum);
+	public Computer findComputerById(int id) {
+		Computer computer = dao.findComputerById(id);
 		return computer;
 	}
 
 	@Override
-	public void remove(int serialnum) {
-		dao.remove(serialnum);
+	public void remove(int id) {
+		dao.remove(id);
 
 	}
 

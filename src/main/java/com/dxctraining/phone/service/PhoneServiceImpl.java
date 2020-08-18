@@ -31,14 +31,14 @@ public class PhoneServiceImpl implements IPhoneService {
 	}
 
 	@Override
-	public Phone findPhoneBySerialnum(int serialnum) {
-		Phone phone= dao.findPhoneBySerialnum(serialnum);
+	public Phone findPhoneById(int id) {
+		Phone phone= dao.findPhoneById(id);
 		return phone;
 	}
 
 	@Override
-	public void remove(int serialnum) {
-		dao.remove(serialnum);
+	public void remove(int id) {
+		dao.remove(id);
 
 	}
 

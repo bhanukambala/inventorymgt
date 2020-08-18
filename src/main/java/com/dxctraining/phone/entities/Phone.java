@@ -10,15 +10,13 @@ import com.dxctraining.supplier.entities.Supplier;
 @Table(name="phones")
 public class Phone extends Item {
 	
-	@Id
-	@GeneratedValue
-	private int serialnum;
+	
 	private int storagesize;
 	
-	public Phone(int id, String name,Supplier supplier,int storagesize,int serialnum) {
-		super( id,name,supplier);
+	public Phone( String name,Supplier supplier,int storagesize) {
+		super(name,supplier);
 		this.storagesize=storagesize;
-		this.serialnum=serialnum;
+		
 	}
 	public Phone() {
 		
@@ -29,15 +27,9 @@ public class Phone extends Item {
 	public void setStoragesize(int storagesize) {
 		this.storagesize = storagesize;
 	}
-	public int getSerialnum() {
-		return serialnum;
-	}
-	public void setSerialnum(int serialnum) {
-		this.serialnum = serialnum;
-	}
-	@Override
+		@Override
 	public int hashCode() {
-		return serialnum;
+		return getId();
 	}
 
 	@Override
@@ -48,6 +40,6 @@ public class Phone extends Item {
 			return false;
 		}
 		Phone that = (Phone) object;
-		return serialnum == that.serialnum;
+		return getId() == that.getId();
 	}
 }

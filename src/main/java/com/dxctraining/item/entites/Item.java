@@ -13,10 +13,11 @@ public class Item {
 	private int id;
 
 	private String name;
+	@ManyToOne
 	private Supplier supplier;
 
-	public Item(int id, String name,Supplier supplier) {
-		this.id = id;
+	public Item(String name,Supplier supplier) {
+	
 		this.name = name;
 		this.supplier=supplier;
 	}
