@@ -7,7 +7,6 @@ import com.dxctraining.supplier.entities.Supplier;
 
 
 
-@Inheritance(strategy = InheritanceType.JOINED)
 @Entity
 @Table(name="computers")
 public class Computer extends Item{

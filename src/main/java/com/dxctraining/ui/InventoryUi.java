@@ -1,4 +1,4 @@
-package com.dxctraining.Ui;
+package com.dxctraining.ui;
 
 
 import org.springframework.beans.factory.annotation.Autowired;

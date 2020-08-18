@@ -11,7 +11,7 @@
 	<groupId>com.dxctraining</groupId>
 	<artifactId>inventorymgt</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>inventorymgt</name>
+	<name>inventorymanagement</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>

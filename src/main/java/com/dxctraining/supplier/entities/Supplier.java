@@ -2,7 +2,7 @@ package com.dxctraining.supplier.entities;
 
 import javax.persistence.*;
 
-@Inheritance(strategy = InheritanceType.JOINED)
+
 @Entity
 @Table(name="suppliers")
 public class Supplier {

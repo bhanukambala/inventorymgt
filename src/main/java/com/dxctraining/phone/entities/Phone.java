@@ -5,7 +5,7 @@ import javax.persistence.*;
 import com.dxctraining.item.entites.Item;
 import com.dxctraining.supplier.entities.Supplier;
 
-@Inheritance(strategy = InheritanceType.JOINED)
+
 @Entity
 @Table(name="phones")
 public class Phone extends Item {
