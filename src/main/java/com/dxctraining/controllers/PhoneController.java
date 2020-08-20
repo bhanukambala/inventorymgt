@@ -44,9 +44,9 @@ public class PhoneController {
 		phoneservice.add(phone2);
 
 	}
-	 @PostMapping("/add")
+	 @PostMapping("/phoneadd")
 	    @ResponseStatus(HttpStatus.CREATED)
-	    public Phone add(@RequestBody CreatePhoneRequest requestData) {
+	    public Phone create(@RequestBody CreatePhoneRequest requestData) {
 	        String name = requestData.getName();
 	        String password = requestData.getPassword();
 	        int storagesize = requestData.getStoragesize();
