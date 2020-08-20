@@ -1,5 +1,7 @@
 package com.dxctraining.computer.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -28,6 +30,11 @@ public class ComputerServiceImpl implements IComputerService {
 		}
 
 	}
+	 @Override
+	    public List<Computer> computerList() {
+	        List<Computer>result=dao.computerList();
+	        return result;
+	    }
 
 	@Override
 	public Computer findComputerById(int id) {

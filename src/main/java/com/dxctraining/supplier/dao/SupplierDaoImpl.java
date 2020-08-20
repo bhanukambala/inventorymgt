@@ -1,12 +1,16 @@
 package com.dxctraining.supplier.dao;
 
 import com.dxctraining.supplier.exceptions.*;
+
 import com.dxctraining.supplier.entities.*;
 
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 
 
 @Repository
@@ -30,7 +34,14 @@ public class SupplierDaoImpl implements ISupplierDao {
 		return supplier;
 	}
 
-	
+	 @Override
+	    public List<Supplier> supplierList() {
+	        String jpaQuery = "from Supplier";
+	       TypedQuery<Supplier>query= entityManager.createQuery(jpaQuery, Supplier.class);
+	        List<Supplier> resultList = query.getResultList();
+	        return resultList;
+	    }
+	 
 	@Override
 	public void remove(int id) {
 		Supplier supplier=findSupplierById(id);

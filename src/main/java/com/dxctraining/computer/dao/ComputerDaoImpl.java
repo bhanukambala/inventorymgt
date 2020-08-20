@@ -5,8 +5,11 @@ import org.springframework.stereotype.Repository;
 import com.dxctraining.computer.entities.Computer;
 import com.dxctraining.computer.exceptions.ComputerNotFoundException;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 
 @Repository
 public class ComputerDaoImpl implements IComputerDao {
@@ -28,7 +31,13 @@ public class ComputerDaoImpl implements IComputerDao {
 		}
 		return computer;
 	}
-
+	@Override
+    public List<Computer> computerList() {
+        String jpaQuery = "from computer";
+       TypedQuery<Computer>computerquery= entityManager.createQuery(jpaQuery, Computer.class);
+        List<Computer> resultList = computerquery.getResultList();
+        return resultList;
+    }
 	@Override
 	public void remove(int id) {
 		Computer computer = findComputerById(id);
