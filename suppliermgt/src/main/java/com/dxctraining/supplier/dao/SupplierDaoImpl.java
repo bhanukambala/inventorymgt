@@ -1,6 +1,6 @@
 package com.dxctraining.supplier.dao;
 
-import com.dxctraining.supplier.exceptions.*;
+import com.dxctraining.exception.*;
 
 import com.dxctraining.supplier.entities.*;
 

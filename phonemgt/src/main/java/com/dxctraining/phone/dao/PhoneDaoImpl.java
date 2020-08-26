@@ -43,5 +43,13 @@ public class PhoneDaoImpl implements IPhoneDao {
 		Phone phone= findPhoneById(id);
 		entityManager.remove(phone);
 	}
+	@Override
+	public List<Phone> findPhoneBySupplier(int supplierId) {
+		String jpaql = "from Computer where supplierId=:supplier";
+		TypedQuery<Phone> query = entityManager.createQuery(jpaql, Phone.class);
+		query.setParameter("supplier", supplierId);
+		List<Phone> phoneList = query.getResultList();
+		return phoneList;
+	}
 
 }

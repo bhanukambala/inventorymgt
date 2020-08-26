@@ -41,7 +41,11 @@ public class ComputerServiceImpl implements IComputerService {
 		Computer computer = dao.findComputerById(id);
 		return computer;
 	}
-
+	@Override
+	public List<Computer> findComputerBySupplier(int supplierId){
+		List<Computer>list=dao.findComputerBySupplier(supplierId);
+		return list;
+	}
 	@Override
 	public void remove(int id) {
 		dao.remove(id);

@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.dxctraining.supplier.dao.ISupplierDao;
 import com.dxctraining.supplier.entities.Supplier;
-import com.dxctraining.supplier.exceptions.InvalidArgumentException;
+import com.dxctraining.exception.InvalidArgumentException;
 
 @Transactional
 @Service

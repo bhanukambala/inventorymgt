@@ -10,5 +10,5 @@ public interface IPhoneService {
 	Phone findPhoneById(int id);
 		 void remove(int id);
 		List<Phone> phoneList();
-
+		List<Phone> findPhoneBySupplier(int supplierId);
 }

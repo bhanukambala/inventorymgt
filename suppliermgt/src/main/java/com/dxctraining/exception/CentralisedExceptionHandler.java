@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @RestControllerAdvice
 public class CentralisedExceptionHandler {
 
-	 @ExceptionHandler(ComputerNotFoundException.class)
+	 @ExceptionHandler(SupplierNotFoundException.class)
 	    @ResponseStatus(HttpStatus.NOT_FOUND)
-	    public String handleEmployeeNotFound(ComputerNotFoundException e){
+	    public String handleEmployeeNotFound(SupplierNotFoundException e){
 	        System.out.println("inside handle phone not found exception");
 	        String msg=e.getMessage();
 	        return msg;

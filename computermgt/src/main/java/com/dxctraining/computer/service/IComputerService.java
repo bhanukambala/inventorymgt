@@ -9,5 +9,6 @@ public interface IComputerService {
 		 void remove(int id);
 		Computer findComputerById(int id);
 		List<Computer> computerList();
+		List<Computer> findComputerBySupplier(int supplierid);
 
 }

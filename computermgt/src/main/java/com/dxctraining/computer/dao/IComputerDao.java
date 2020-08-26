@@ -9,4 +9,5 @@ public interface IComputerDao {
 		 void remove(int id);
 		Computer findComputerById(int id);
 		List<Computer> computerList();
+		List<Computer> findComputerBySupplier(int supplierId);
 }

@@ -13,11 +13,14 @@ public class Computer {
 	
 	private int disksize;
 	
+	private int supplierid;
+	
 	private String name;
 		
-	public Computer( String name,int disksize) {
+	public Computer(int supplierid, String name,int disksize) {
 		this.name=name;
 		this.disksize=disksize;
+		this.supplierid=supplierid;
 	}
 	public Computer() {
 		
@@ -40,6 +43,13 @@ public class Computer {
 	}
 	public void setId(int id) {
 		this.id = id;
+	}
+	
+	public int getSupplierid() {
+		return supplierid;
+	}
+	public void setSupplierid(int supplierid) {
+		this.supplierid = supplierid;
 	}
 	public int hashCode() {
 		return id;

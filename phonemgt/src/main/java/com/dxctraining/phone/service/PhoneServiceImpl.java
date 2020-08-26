@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
 import com.dxctraining.phone.dao.IPhoneDao;
 import com.dxctraining.phone.entities.Phone;
 import com.dxctraining.phone.exceptions.InvalidArgumentException;
@@ -41,7 +42,11 @@ public class PhoneServiceImpl implements IPhoneService {
 	        List<Phone>result=dao.phoneList();
 	        return result;
 	    }
-
+	 @Override
+		public List<Phone> findPhoneBySupplier(int supplierId){
+			List<Phone>list=dao.findPhoneBySupplier(supplierId);
+			return list;
+		}
 	@Override
 	public void remove(int id) {
 		dao.remove(id);

@@ -1,4 +1,4 @@
-package com.dxctraining.supplier.exceptions;
+package com.dxctraining.exception;
 
 public class SupplierNotFoundException extends RuntimeException{
 	

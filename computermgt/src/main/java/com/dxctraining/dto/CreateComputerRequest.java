@@ -4,6 +4,7 @@ public class CreateComputerRequest {
 	
 	private String name;
 	private int disksize;
+	private int supplierid;
 	
 		
 	public String getName() {
@@ -20,6 +21,14 @@ public class CreateComputerRequest {
 
 	public void setDisksize(int disksize) {
 		this.disksize = disksize;
+	}
+
+	public int getSupplierid() {
+		return supplierid;
+	}
+
+	public void setSupplierid(int supplierid) {
+		this.supplierid = supplierid;
 	}
 
 		

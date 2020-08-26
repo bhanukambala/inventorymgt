@@ -13,16 +13,31 @@ public class Phone {
 	private int storagesize;
 	
 	private String name;
+	
+	private int supplierid;
 		
-	public Phone( String name,int storagesize) {
+	public Phone( String name,int storagesize,int supplierid) {
 		this.name=name;
 		this.storagesize=storagesize;
+		this.supplierid=supplierid;
 		
 	}
 	public Phone() {
 		
 	}
 	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public int getSupplierid() {
+		return supplierid;
+	}
+	public void setSupplierid(int supplierid) {
+		this.supplierid = supplierid;
+	}
 	public String getName() {
 		return name;
 	}

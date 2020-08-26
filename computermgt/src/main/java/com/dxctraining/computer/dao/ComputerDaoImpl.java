@@ -43,5 +43,12 @@ public class ComputerDaoImpl implements IComputerDao {
 		Computer computer = findComputerById(id);
 		entityManager.remove(computer);
 	}
-
+	@Override
+	public List<Computer> findComputerBySupplier(int supplierId) {
+		String jpaql = "from Computer where supplierId=:supplier";
+		TypedQuery<Computer> query = entityManager.createQuery(jpaql, Computer.class);
+		query.setParameter("supplier", supplierId);
+		List<Computer> computerList = query.getResultList();
+		return computerList;
+	}
 }
