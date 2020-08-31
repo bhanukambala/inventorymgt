@@ -19,9 +19,9 @@ public class PhoneServiceImpl implements IPhoneService {
 	private IPhoneDao dao;
 
 	@Override
-	public Phone add(Phone phone) {
+	public Phone save(Phone phone) {
 		display(phone);
-		phone = dao.add(phone);
+		phone = dao.save(phone);
 		return phone;
 	}
 

@@ -1,15 +1,16 @@
 package com.dxctraining.supplier.entities;
 
-import javax.persistence.*;
+import java.util.Objects;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 
-@Entity
-@Table(name="suppliers")
+@Document
 public class Supplier {
 
 	@Id
-	@GeneratedValue
-	public int id;
+	public String id;
 
 	private String name;
 	
@@ -32,11 +33,13 @@ public class Supplier {
 		this.password = password;
 	}
 
-	public int getId() {
+	
+
+	public String getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
@@ -50,7 +53,7 @@ public class Supplier {
 
 	@Override
 	public int hashCode() {
-		return id;
+		return Objects.hash(id);
 	}
 
 	@Override
@@ -60,7 +63,7 @@ public class Supplier {
 		if (object == null || getClass() != object.getClass()) {
 			return false;
 		}
-		Supplier that = (Supplier) object;
-		return id == that.id;
+		Supplier supplier = (Supplier) object;
+		return Objects.equals(id, supplier.id);
 	}
 }

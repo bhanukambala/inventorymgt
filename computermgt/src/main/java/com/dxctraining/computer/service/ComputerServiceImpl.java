@@ -18,9 +18,9 @@ public class ComputerServiceImpl implements IComputerService {
 	private IComputerDao dao;
 
 	@Override
-	public Computer add(Computer computer) {
+	public Computer save(Computer computer) {
 		display(computer);
-		computer = dao.add(computer);
+		computer = dao.save(computer);
 		return computer;
 	}
 

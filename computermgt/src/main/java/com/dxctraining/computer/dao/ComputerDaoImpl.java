@@ -18,7 +18,7 @@ public class ComputerDaoImpl implements IComputerDao {
 	private EntityManager entityManager;
 
 	@Override
-	public Computer add(Computer computer) {
+	public Computer save(Computer computer) {
 		entityManager.persist(computer);
 		return computer;
 	}

@@ -18,7 +18,7 @@ public class PhoneDaoImpl implements IPhoneDao {
 	private EntityManager entityManager;
 
 	@Override
-	public Phone add(Phone phone) {
+	public Phone save(Phone phone) {
 		entityManager.persist(phone);
 		return phone;
 	}

@@ -5,10 +5,9 @@ import java.util.List;
 import com.dxctraining.supplier.entities.Supplier;
 
 public interface ISupplierService {
-	Supplier add(Supplier supplier);
-	Supplier findSupplierById(int id);
-		 void remove(int id);
+		Supplier findSupplierById(String id);
 		List<Supplier> supplierList();
-		
-
+		List<Supplier> findSupplierByName(String name);
+		void remove(String id);
+		Supplier save(Supplier supplier);
 }
